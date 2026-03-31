@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro DWEB1 JS</title>
+</head>
+<body>
+    <script lang="javascript" type="text/javascript">
+        var nome = "Carlota"
+        var idade = 20
+        var endereco = "Minha casa"
+        var cep = 888888
+        var cpf = 0898908098
+        var numero1
+        var numero2
+        var numero3
+        var maiorNumero
+        var idadeVoto
+
+        document.writeln("<h1>Bom dia BCC!</h1>");
+
+        document.write("<form>");
+        document.write("<input name='nome' id='nome'/>");
+        document.write("<input type='submit'>");    
+        document.write("</form>");
+
+        nome = prompt("Digite seu nome", "seu nome")
+
+        idade < 18 ? alert("Nao pode jogar roblox") : document.write("Bem vindo ao roblox"); 
+
+        document.write("<hr>");
+        document.write("<h2>Exercicio 1: Maior numero</h2>");
+
+        numero1 = Number(prompt("Digite o primeiro numero:", "0"));
+        numero2 = Number(prompt("Digite o segundo numero:", "0"));
+        numero3 = Number(prompt("Digite o terceiro numero:", "0"));
+
+        maiorNumero = numero1;
+
+        if (numero2 > maiorNumero) {
+            maiorNumero = numero2;
+        }
+
+        if (numero3 > maiorNumero) {
+            maiorNumero = numero3;
+        }
+
+        if (numero1 === numero2 && numero2 === numero3) {
+            document.write("<p>Os tres numeros sao iguais: " + numero1 + ".</p>");
+        } else {
+            document.write("<p>O maior numero e: " + maiorNumero + ".</p>");
+        }
+
+        document.write("<hr>");
+        document.write("<h2>Exercicio 2: Verificacao de voto</h2>");
+
+        idadeVoto = Number(prompt("Digite sua idade:", "18"));
+
+        if (idadeVoto < 16) {
+            document.write("<p>Nao pode votar.</p>");
+        } else if ((idadeVoto >= 16 && idadeVoto <= 17) || idadeVoto > 70) {
+            document.write("<p>O voto e opcional.</p>");
+        } else {
+            document.write("<p>O voto e obrigatorio.</p>");
+        }
+    </script>
+</body>
+</html>
