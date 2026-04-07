@@ -46,20 +46,26 @@
         //ex2
 
         document.write("<hr>");
-        document.write("<h2>Ex 2 - par ou não?</h2>")
+        document.write("<h2>Ex 2: Par ou Ímpar</h2>");
+        
+        var numParImpar = Number(prompt("EXERCÍCIO 2\nDigite um número para saber se é par ou ímpar:", "0"));
+        var restoParImpar = Math.abs(numParImpar % 2); // Pega o resto da divisão
 
-        var n = Number(prompt("Digite o número a verificar se é par ou não"))
-
-        if (n % 2 == 0) {
-            document.write("É par!")
-        } else {
-            documento.write("É impar")
+        switch (restoParImpar) {
+            case 0:
+                document.write("<p>O número " + numParImpar + " é <strong>Par</strong>.</p>");
+                break;
+            case 1:
+                document.write("<p>O número " + numParImpar + " é <strong>Ímpar</strong>.</p>");
+                break;
+            default:
+                document.write("<p>Valor inválido.</p>");
         }
 
         //ex3
 
         document.write("<hr>");
-        document.write("<h2>Exercício 3: Divisão do Baralho</h2>");
+        document.write("<h2>Ex 3: Divisão do Baralho</h2>");
         
         var posicaoCarta = Number(prompt("EXERCÍCIO 3\nDigite a posição da carta no baralho (ex: 5):", "1"));
         var restoBaralho = posicaoCarta % 4;
@@ -87,7 +93,7 @@
         //ex4
 
         document.write("<hr>");
-        document.write("<h2>Exercício 4: Mês do Ano</h2>");
+        document.write("<h2>Ex 4: Mês do Ano</h2>");
         
         var mesNum = Number(prompt("EXERCÍCIO 4\nDigite o número do mês (1 a 12):", "1"));
         var nomeMes;
