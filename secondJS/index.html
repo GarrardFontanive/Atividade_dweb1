@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script lang="javascript" type="text/javascript">
+
+        //ex1
+
+        document.write("<hr>");
+        document.write("<h2>Ex 1 - dias da semana</h2>")
+
+        var diaNum = Number(prompt("Ex.1 -> Digite o dia da semana com (1-7)"));
+        var nomeDia;
+    
+        switch (diaNum) {
+            case 1: 
+                nomeDia = "Domingo";
+                break;
+            case 2: 
+                nomeDia = "Segunda-feira";
+                break;
+            case 3: 
+                nomeDia = "Terça-feira";
+                break;
+            case 4: 
+                nomeDia = "Quarta-feira";
+                break;
+            case 5: 
+                nomeDia = "Quinta-feira";
+                break;
+            case 6: 
+                nomeDia = "Sexta-feira";
+                break;
+            case 7: 
+                nomeDia = "Sábado";
+                break;
+            default: 
+                alert("Número invalido")
+        }
+        document.write("O numero " + diaNum + " representa a: <strong>" + nomeDia + "</strong>.")
+
+        //ex2
+
+        document.write("<hr>");
+        document.write("<h2>Ex 2 - par ou não?</h2>")
+
+        var n = Number(prompt("Digite o número a verificar se é par ou não"))
+
+        if (n % 2 == 0) {
+            document.write("É par!")
+        } else {
+            documento.write("É impar")
+        }
+
+        //ex3
+
+        document.write("<hr>");
+        document.write("<h2>Exercício 3: Divisão do Baralho</h2>");
+        
+        var posicaoCarta = Number(prompt("EXERCÍCIO 3\nDigite a posição da carta no baralho (ex: 5):", "1"));
+        var restoBaralho = posicaoCarta % 4;
+        var jogador;
+
+        switch (restoBaralho) {
+            case 1: 
+                jogador = "Jogador 1"; 
+                break;
+            case 2: 
+                jogador = "Jogador 2"; 
+                break;
+            case 3: 
+                jogador = "Jogador 3"; 
+                break;
+            case 0: 
+                jogador = "Jogador 4"; 
+                break; 
+            default: 
+                jogador = "Posição inválida";
+        }
+
+        document.write("<p>A carta na posição " + posicaoCarta + " será entregue ao <strong>" + jogador + "</strong>.</p>");
+
+        //ex4
+
+        document.write("<hr>");
+        document.write("<h2>Exercício 4: Mês do Ano</h2>");
+        
+        var mesNum = Number(prompt("EXERCÍCIO 4\nDigite o número do mês (1 a 12):", "1"));
+        var nomeMes;
+
+        switch (mesNum) {
+            case 1: 
+                nomeMes = "Janeiro"; 
+                break;
+            case 2: 
+                nomeMes = "Fevereiro"; 
+                break;
+            case 3: 
+                nomeMes = "Março"; 
+                break;
+            case 4: 
+                nomeMes = "Abril"; 
+                break;
+            case 5: 
+                nomeMes = "Maio"; 
+                break;
+            case 6: 
+                nomeMes = "Junho"; 
+                break;
+            case 7: 
+                nomeMes = "Julho"; 
+                break;
+            case 8: 
+                nomeMes = "Agosto"; 
+                break;
+            case 9: 
+                nomeMes = "Setembro"; 
+                break;
+            case 10: 
+                nomeMes = "Outubro"; 
+                break;
+            case 11: 
+                nomeMes = "Novembro"; 
+                break;
+            case 12: 
+                nomeMes = "Dezembro"; 
+                break;
+            default: 
+                nomeMes = "Mês inválido";
+        }
+
+        document.write("<p>O número " + mesNum + " corresponde ao mês de: <strong>" + nomeMes + "</strong>.</p>");
+        document.write("<hr>"); 
+
+    </script>
+</body>
+</html>
