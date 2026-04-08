@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade JS - Parte 3 (Arrays)</title>
+</head>
+<body>
+    <h1>Resultados da Atividade - Parte 3 (Arrays)</h1>
+
+    <script lang="javascript" type="text/javascript">
+        var idades = []; 
+        
+        for (var i = 0; i < 10; i++) {
+            var idadeDigitada = Number(prompt("Exercício 1\nDigite a idade " + (i + 1) + " de 10:", "20"));
+            idades.push(idadeDigitada); 
+        }
+
+        document.write("<h2>1. Lista de Idades (Ordem de Digitação)</h2>");
+        document.write("<ul>");
+        for (var i = 0; i < idades.length; i++) {
+            document.write("<li>Idade: " + idades[i] + "</li>");
+        }
+        document.write("</ul>");
+
+        var idadesCrescente = idades.slice().sort(function(a, b) { return a - b; });
+
+        document.write("<hr><h2>2. Lista de Idades (Ordem Crescente)</h2>");
+        document.write("<ul>");
+        for (var i = 0; i < idadesCrescente.length; i++) {
+            document.write("<li>Idade: " + idadesCrescente[i] + "</li>");
+        }
+        document.write("</ul>");
+
+
+        var idadesDecrescente = idades.slice().sort(function(a, b) { return b - a; });
+
+        document.write("<hr><h2>3. Lista de Idades (Ordem Decrescente)</h2>");
+        document.write("<ul>");
+        for (var i = 0; i < idadesDecrescente.length; i++) {
+            document.write("<li>Idade: " + idadesDecrescente[i] + "</li>");
+        }
+        document.write("</ul>");
+
+
+        var filaFuncionarios = []; 
+
+        for (var i = 0; i < 5; i++) {
+            var idFunc = prompt("Exercícios 4 e 5 - Funcionário " + (i + 1) + " de 5\nDigite o ID:", (i + 1));
+            var nomeFunc = prompt("Funcionário " + (i + 1) + " de 5\nDigite o Nome:", "Funcionário " + (i + 1));
+            var salarioFunc = Number(prompt("Funcionário " + (i + 1) + " de 5\nDigite o Salário:", "2500"));
+            var idadeFunc = Number(prompt("Funcionário " + (i + 1) + " de 5\nDigite a Idade:", "30"));
+
+            var funcionario = {
+                id: idFunc,
+                nome: nomeFunc,
+                salario: salarioFunc,
+                idade: idadeFunc
+            };
+            filaFuncionarios.push(funcionario);
+        }
+
+        document.write("<hr><h2>4. Tabela de Funcionários</h2>");
+        document.write("<table>");
+        document.write("<tr><th>ID</th><th>Nome</th><th>Salário</th><th>Idade</th></tr>");
+        
+        for (var i = 0; i < filaFuncionarios.length; i++) {
+            var f = filaFuncionarios[i];
+            document.write("<tr>");
+            document.write("<td>" + f.id + "</td>");
+            document.write("<td>" + f.nome + "</td>");
+            document.write("<td>R$ " + f.salario.toFixed(2) + "</td>"); 
+            document.write("<td>" + f.idade + " anos</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+        var nomeMaisNovo = filaFuncionarios[0].nome;
+        var menorIdade = filaFuncionarios[0].idade;
+
+        var idadeMaiorSalario = filaFuncionarios[0].idade;
+        var maiorSalario = filaFuncionarios[0].salario;
+
+        for (var i = 1; i < filaFuncionarios.length; i++) {
+            if (filaFuncionarios[i].idade < menorIdade) {
+                menorIdade = filaFuncionarios[i].idade;
+                nomeMaisNovo = filaFuncionarios[i].nome;
+            }
+
+            if (filaFuncionarios[i].salario > maiorSalario) {
+                maiorSalario = filaFuncionarios[i].salario;
+                idadeMaiorSalario = filaFuncionarios[i].idade;
+            }
+        }
+
+        document.write("<hr><h2>5. Análise dos Funcionários</h2>");
+        document.write("<p>Nome do funcionário mais novo: <strong>" + nomeMaisNovo + "</strong> (" + menorIdade + " anos).</p>");
+        document.write("<p>Idade do funcionário com o maior salário: <strong>" + idadeMaiorSalario + " anos</strong> (Salário de R$ " + maiorSalario.toFixed(2) + ").</p>");
+
+    </script>
+</body>
+</html>
