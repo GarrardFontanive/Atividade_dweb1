@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Funcionários</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .linha-maior-salario {
+      background-color: #f8d7da;
+    }
+
+    .linha-menor-salario {
+      background-color: #fff3cd;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Cadastro de Funcionário</h2>
+          </div>
+
+          <div class="card-body">
+            <form id="formFuncionario">
+              <div class="row g-3">
+                <div class="col-md-8">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nome" placeholder="Digite o nome completo" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                  <input type="date" class="form-control" id="dataNascimento" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="sexo" class="form-label">Sexo</label>
+                  <select class="form-select" id="sexo" required>
+                    <option value="" selected disabled>Selecione</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                    <option>Outro</option>
+                    <option>Prefiro não informar</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="cpf" class="form-label">CPF</label>
+                  <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="rg" class="form-label">RG</label>
+                  <input type="text" class="form-control" id="rg" placeholder="00.000.000-0" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="titulo" class="form-label">Título Eleitoral</label>
+                  <input type="text" class="form-control" id="titulo" placeholder="Digite o título eleitoral" required>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <h4 class="mb-3">Endereço</h4>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="rua" class="form-label">Rua</label>
+                  <input type="text" class="form-control" id="rua" placeholder="Digite a rua" required>
+                </div>
+
+                <div class="col-md-2">
+                  <label for="numero" class="form-label">Número</label>
+                  <input type="text" class="form-control" id="numero" placeholder="Nº" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="bairro" class="form-label">Bairro</label>
+                  <input type="text" class="form-control" id="bairro" placeholder="Digite o bairro" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="cidade" class="form-label">Cidade</label>
+                  <input type="text" class="form-control" id="cidade" placeholder="Digite a cidade" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="estado" class="form-label">Estado</label>
+                  <input type="text" class="form-control" id="estado" placeholder="Digite o estado" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="cep" class="form-label">CEP</label>
+                  <input type="text" class="form-control" id="cep" placeholder="00000-000" required>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <h4 class="mb-3">Contato</h4>
+
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="telefoneResidencial" class="form-label">Telefone Residencial</label>
+                  <input type="text" class="form-control" id="telefoneResidencial" placeholder="(00) 0000-0000" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="telefoneCelular" class="form-label">Telefone Celular</label>
+                  <input type="text" class="form-control" id="telefoneCelular" placeholder="(00) 00000-0000" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="instagram" class="form-label">Instagram</label>
+                  <input type="text" class="form-control" id="instagram" placeholder="@usuario">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="facebook" class="form-label">Facebook</label>
+                  <input type="text" class="form-control" id="facebook" placeholder="Perfil do Facebook">
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <h4 class="mb-3">Informações Adicionais</h4>
+
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="filhos" class="form-label">Número de Filhos</label>
+                  <input type="number" class="form-control" id="filhos" min="0" placeholder="0" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="salario" class="form-label">Salário Base</label>
+                  <input type="number" class="form-control" id="salario" min="0" step="0.01" placeholder="0,00" required>
+                </div>
+              </div>
+
+              <div class="mt-4 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="reset" class="btn btn-secondary">Limpar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card shadow-sm mt-4">
+          <div class="card-header bg-dark text-white">
+            <h3 class="mb-0 fs-4">Funcionários Cadastrados</h3>
+          </div>
+
+          <div class="card-body">
+            <div class="alert alert-info">
+              Vale alimentação fixo: <strong>R$ 250,00</strong> por funcionário. Salário família: <strong>R$ 100,00</strong> por filho, com máximo de 3 filhos.
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Sexo</th>
+                    <th>Filhos</th>
+                    <th>Salário Base</th>
+                    <th>Vale Alimentação</th>
+                    <th>Salário Família</th>
+                    <th>INSS</th>
+                    <th>Descontos Totais</th>
+                    <th>Salário Total</th>
+                  </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                  <tr>
+                    <td colspan="10" class="text-center text-muted">Nenhum funcionário cadastrado.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const funcionarios = [];
+    const VALE_ALIMENTACAO = 250;
+
+    const form = document.getElementById("formFuncionario");
+    const corpoTabela = document.getElementById("corpoTabela");
+    const campoSexo = document.getElementById("sexo");
+
+    function formatarMoeda(valor) {
+      return valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+    }
+
+    function calcularSalarioFamilia(numeroFilhos) {
+      const filhosConsiderados = Math.min(Number(numeroFilhos), 3);
+      return filhosConsiderados * 100;
+    }
+
+    function calcularInss(salarioBase) {
+      return salarioBase * 0.2;
+    }
+
+    function renderizarTabela() {
+      if (funcionarios.length === 0) {
+        corpoTabela.innerHTML = `
+          <tr>
+            <td colspan="10" class="text-center text-muted">Nenhum funcionário cadastrado.</td>
+          </tr>
+        `;
+        return;
+      }
+
+      const salarios = funcionarios.map((funcionario) => funcionario.salarioBase);
+      const maiorSalario = Math.max(...salarios);
+      const menorSalario = Math.min(...salarios);
+
+      corpoTabela.innerHTML = funcionarios.map((funcionario) => {
+        let classeLinha = "";
+
+        if (funcionario.salarioBase === maiorSalario) {
+          classeLinha = "linha-maior-salario";
+        } else if (funcionario.salarioBase === menorSalario) {
+          classeLinha = "linha-menor-salario";
+        }
+
+        return `
+          <tr class="${classeLinha}">
+            <td>${funcionario.nome}</td>
+            <td>${funcionario.cpf}</td>
+            <td>${funcionario.sexo}</td>
+            <td>${funcionario.filhos}</td>
+            <td>${formatarMoeda(funcionario.salarioBase)}</td>
+            <td>${formatarMoeda(funcionario.valeAlimentacao)}</td>
+            <td>${formatarMoeda(funcionario.salarioFamilia)}</td>
+            <td>${formatarMoeda(funcionario.inss)}</td>
+            <td>${formatarMoeda(funcionario.descontosTotais)}</td>
+            <td>${formatarMoeda(funcionario.salarioTotal)}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const salarioBase = Number(document.getElementById("salario").value);
+      const filhos = Number(document.getElementById("filhos").value);
+      const salarioFamilia = calcularSalarioFamilia(filhos);
+      const inss = calcularInss(salarioBase);
+      const descontosTotais = inss;
+      const salarioTotal = salarioBase + VALE_ALIMENTACAO + salarioFamilia - descontosTotais;
+
+      const funcionario = {
+        nome: document.getElementById("nome").value.trim(),
+        dataNascimento: document.getElementById("dataNascimento").value,
+        sexo: campoSexo.value,
+        cpf: document.getElementById("cpf").value.trim(),
+        rg: document.getElementById("rg").value.trim(),
+        titulo: document.getElementById("titulo").value.trim(),
+        rua: document.getElementById("rua").value.trim(),
+        numero: document.getElementById("numero").value.trim(),
+        bairro: document.getElementById("bairro").value.trim(),
+        cidade: document.getElementById("cidade").value.trim(),
+        estado: document.getElementById("estado").value.trim(),
+        cep: document.getElementById("cep").value.trim(),
+        telefoneResidencial: document.getElementById("telefoneResidencial").value.trim(),
+        telefoneCelular: document.getElementById("telefoneCelular").value.trim(),
+        instagram: document.getElementById("instagram").value.trim(),
+        facebook: document.getElementById("facebook").value.trim(),
+        filhos,
+        salarioBase,
+        valeAlimentacao: VALE_ALIMENTACAO,
+        salarioFamilia,
+        inss,
+        descontosTotais,
+        salarioTotal
+      };
+
+      funcionarios.push(funcionario);
+      renderizarTabela();
+      form.reset();
+      campoSexo.selectedIndex = 0;
+    });
+  </script>
+</body>
+</html>
